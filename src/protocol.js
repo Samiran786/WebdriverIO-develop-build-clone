@@ -81,7 +81,7 @@ export async function sendCommand (method, endpoint, payload = {}){
 }
 
  /*
-    Going to create a clickElemet(elementId) function to perform click action -
+    Going to create a clickElement(elementId) function to perform click action -
     It will only going to run the post request to endpoint "/element/${elementId}/click"
  */
 export async function clickElement(elementId){
