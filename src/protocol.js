@@ -31,7 +31,7 @@ export async function createSession(){
 }
 
 /*
-    Going to create "sendCommand(method, endpoint, payload = {})" which return the axios respons
+    Going to create "sendCommand(method, endpoint, payload = {})" which return the axios response
     of the given parameters like method, url and data: payload.
 */
 export async function sendCommand (method, endpoint, payload = {}){
