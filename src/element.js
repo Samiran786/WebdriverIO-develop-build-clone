@@ -1,11 +1,14 @@
-import { clickElement, findElement, sendCommand } from "./protocol.js";
-
+import { clickElement, findElement } from "./protocol.js";
+import { retry_engine } from "./retry-engine.js";
 export function $(selector){
     return{
         async click(){
             //await sendCommand("ELEMENT_CLICK", {selector});
-            const elementId = await findElement(selector);
-            await clickElement(elementId);
+            return retry_engine(async ()=> {
+                    const elementId = await findElement(selector);
+                    await clickElement(elementId);
+            });
+            
         }
     }
 }
